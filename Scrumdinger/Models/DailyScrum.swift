@@ -11,7 +11,7 @@ extension DailyScrum {
             title: "Daily Standup",
             atendees: ["Mirko", "Quike", "Daniel"],
             lengthInMinutes: 15,
-            theme: .purple
+            theme: .orange
         ),
         DailyScrum(
             title: "Dev Scrum",
