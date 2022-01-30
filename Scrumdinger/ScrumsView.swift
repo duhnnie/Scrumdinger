@@ -5,9 +5,9 @@ struct ScrumsView: View {
     
     var body: some View {
         List {
-            ForEach(scrums, id: \.title) { scrum in
+            ForEach(scrums) { scrum in
                 CardView(scrum: scrum)
-                    .listRowBackground(Color.yellow)
+                    .listRowBackground(scrum.theme.mainColor)
                     .listRowSeparator(.hidden)
             }
         }
