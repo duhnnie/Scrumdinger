@@ -22,19 +22,19 @@ extension DailyScrum {
             title: "Daily Standup",
             attendees: ["Mirko", "Quike", "Daniel"],
             lengthInMinutes: 15,
-            theme: .orange
+            theme: .teal
         ),
         DailyScrum(
             title: "Dev Scrum",
             attendees: ["Roberto", "Omar", "Richie", "Jona", "Daniel"],
             lengthInMinutes: 20,
-            theme: .navy
+            theme: .yellow
         ),
         DailyScrum(
             title: "Design Scrum",
             attendees: ["Daniel", "Enrique", "Fernando", "Julichus"],
             lengthInMinutes: 120,
-            theme: .indigo
+            theme: .bubblegum
         )
     ]
 }
