@@ -1,12 +1,13 @@
 import Foundation
 import SwiftUI
 
-struct EditDetailView: View {
+struct DetailEditView: View {
     @State private var data = DailyScrum.Data()
+    @State private var newAttendee = ""
     
     var body: some View {
         Form {
-            Section("Meeting Info"){
+            Section(header: Text("Meeting Info")) {
                 TextField("Title", text: $data.title)
                 HStack {
                     Slider(value: $data.lengthInMinutes, in: 5...30, step: 1){
@@ -16,12 +17,36 @@ struct EditDetailView: View {
                     Text("\(Int(data.lengthInMinutes)) minutes")
                 }
             }
+            
+            Section(header: Text("Attendees")) {
+                ForEach(data.attendees) { attendee in
+                    Text(attendee.name)
+                }
+                .onDelete { indexSet in
+                    data.attendees.remove(atOffsets: indexSet)
+                }
+                
+                HStack {
+                    TextField("New Attendee", text: $newAttendee)
+                    Button(action: {
+                        withAnimation {
+                            let attendee = DailyScrum.Attendee(name: newAttendee)
+
+                            data.attendees.append(attendee)
+                            newAttendee = ""
+                        }
+                    }) {
+                        Image(systemName: "plus.circle.fill")
+                    }
+                    .disabled(newAttendee.isEmpty)
+                }
+            }
         }
     }
 }
 
 struct EditDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        EditDetailView()
+        DetailEditView()
     }
 }
