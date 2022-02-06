@@ -2,6 +2,7 @@ import SwiftUI
 
 struct DetailView: View {
     let scrum: DailyScrum
+    @State var isDisplayingEditView = false
     
     var body: some View {
         List {
@@ -34,7 +35,30 @@ struct DetailView: View {
                 }
             }
         }
+        .toolbar{
+            Button(action: { isDisplayingEditView = true }) {
+                Text("Edit")
+            }
+        }
         .navigationTitle(scrum.title)
+        .sheet(isPresented: $isDisplayingEditView, onDismiss: {}) {
+            NavigationView() {
+                DetailEditView()
+                    .navigationTitle(scrum.title)
+                    .toolbar {
+                        ToolbarItem(placement: ToolbarItemPlacement.cancellationAction) {
+                            Button("Cancel") {
+                                isDisplayingEditView = false
+                            }
+                        }
+                        ToolbarItem(placement: ToolbarItemPlacement.confirmationAction) {
+                            Button("Done") {
+                                isDisplayingEditView = false
+                            }
+                        }
+                    }
+            }
+        }
     }
 }
 
