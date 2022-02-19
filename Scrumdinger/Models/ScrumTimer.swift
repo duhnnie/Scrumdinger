@@ -56,6 +56,9 @@ class ScrumTimer: ObservableObject {
 
         secondsElapsedForSpeaker = 0
         guard index < speakers.count else { return }
+        speakerIndex = index
+        activeSpeaker = speakerText
+
         secondsElapsed = secondsPerSpeaker * index
         secondsRemaining = lengthInSeconds - secondsElapsed
         startDate = Date()

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6507D96527C0994D00D9FFB6 /* MeetingFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6507D96427C0994D00D9FFB6 /* MeetingFooterView.swift */; };
 		650CAC8827A22A7E000F6D12 /* ScrumdingerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650CAC8727A22A7E000F6D12 /* ScrumdingerApp.swift */; };
 		650CAC8A27A22A7E000F6D12 /* MeetingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650CAC8927A22A7E000F6D12 /* MeetingView.swift */; };
 		650CAC8C27A22A81000F6D12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 650CAC8B27A22A81000F6D12 /* Assets.xcassets */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6507D96427C0994D00D9FFB6 /* MeetingFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingFooterView.swift; sourceTree = "<group>"; };
 		650CAC8427A22A7E000F6D12 /* Scrumdinger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scrumdinger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		650CAC8727A22A7E000F6D12 /* ScrumdingerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrumdingerApp.swift; sourceTree = "<group>"; };
 		650CAC8927A22A7E000F6D12 /* MeetingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingView.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 				65557B2727B03984001A2602 /* ThemePicker.swift */,
 				65BB6DDA27BD50D0005A6151 /* MeetingHeaderView.swift */,
 				65BF5A0127BDEB9F003E3A24 /* ScrumProgressViewStyle.swift */,
+				6507D96427C0994D00D9FFB6 /* MeetingFooterView.swift */,
 			);
 			path = Scrumdinger;
 			sourceTree = "<group>";
@@ -183,6 +186,7 @@
 			files = (
 				65557B2827B03984001A2602 /* ThemePicker.swift in Sources */,
 				65BF5A0227BDEB9F003E3A24 /* ScrumProgressViewStyle.swift in Sources */,
+				6507D96527C0994D00D9FFB6 /* MeetingFooterView.swift in Sources */,
 				65BF5A0427BDFB97003E3A24 /* ScrumTimer.swift in Sources */,
 				6550B1D127A5AB0A0013F0E8 /* DailyScrum.swift in Sources */,
 				65226DE427A82B0900507D5C /* DetailView.swift in Sources */,
