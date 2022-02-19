@@ -44,6 +44,15 @@ extension DailyScrum {
         lengthInMinutes = Int(data.lengthInMinutes)
         theme = data.theme
     }
+
+    init(data: Data) {
+        self.init(
+            title: data.title,
+            attendees: data.attendees.map{ $0.name },
+            lengthInMinutes: Int(data.lengthInMinutes),
+            theme: data.theme
+        )
+    }
 }
 
 extension DailyScrum {
