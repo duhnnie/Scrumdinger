@@ -2,8 +2,10 @@ import SwiftUI
 
 struct ScrumsView: View {
     @Binding var scrums: [DailyScrum]
+    @Environment(\.scenePhase) private var scenePhase: ScenePhase
     @State var isPresentingNewScrum = false
     @State var newScrumData = DailyScrum.Data()
+    let onEnterInactivePhase: () -> Void
     
     var body: some View {
         List {
@@ -44,13 +46,18 @@ struct ScrumsView: View {
                     }
             }
         }
+        .onChange(of: scenePhase) { phase in
+            if phase == .inactive {
+                onEnterInactivePhase()
+            }
+        }
     }
 }
 
 struct ScrumsView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            ScrumsView(scrums: .constant(DailyScrum.sampleData))
+            ScrumsView(scrums: .constant(DailyScrum.sampleData), onEnterInactivePhase: {})
         }
     }
 }
