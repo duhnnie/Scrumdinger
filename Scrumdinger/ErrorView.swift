@@ -38,7 +38,9 @@ struct ErrorView_Previews: PreviewProvider {
         case SomeError
     }
 
+    static let errorWrapper = ErrorWrapper(error: SampleErrors.SomeError, guidance: "This error can be safely ignored")
+
     static var previews: some View {
-        ErrorView(errorWrapper: ErrorWrapper(error: SampleErrors.SomeError, guidance: "This error can be safely ignored"))
+        ErrorView(errorWrapper: errorWrapper)
     }
 }
