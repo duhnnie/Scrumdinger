@@ -41,9 +41,11 @@ struct DetailView: View {
                     Label("No meetings", systemImage: "calendar.badge.exclamationmark")
                 } else {
                     ForEach(scrum.history) { history in
-                        HStack {
-                            Image(systemName: "calendar")
-                            Text(history.date, style: .date)
+                        NavigationLink(destination: HistoryView(history: history)) {
+                            HStack {
+                                Image(systemName: "calendar")
+                                Text(history.date, style: .date)
+                            }
                         }
                     }
                 }
